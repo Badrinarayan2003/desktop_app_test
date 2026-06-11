@@ -1,7 +1,7 @@
 {
   "name": "bwdp_adminui",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "electron/main.js",
   "scripts": {
@@ -18,6 +18,7 @@
     "@tailwindcss/vite": "^4.3.0",
     "@tanstack/react-table": "^8.21.3",
     "axios": "^1.16.1",
+    "electron-updater": "^6.8.9",
     "lucide-react": "^1.14.0",
     "rc-progress": "^4.0.0",
     "react": "^19.2.6",
@@ -47,15 +48,25 @@
   "build": {
     "appId": "com.bwdp.admin",
     "productName": "BWDP Admin",
+    "generateUpdatesFilesForAllChannels": true,
     "directories": {
       "output": "release"
     },
     "files": [
       "dist/**/*",
-      "electron/**/*"
+      "electron/**/*",
+      "package.json"
+    ],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Badrinarayan2003",
+        "repo": "desktop_app_test"
+      }
     ],
     "mac": {
-      "target": "dmg"
+      "target": "dmg",
+      "artifactName": "${productName}-${version}.${ext}"
     },
     "win": {
       "target": "nsis"
