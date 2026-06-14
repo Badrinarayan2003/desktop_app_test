@@ -1,7 +1,7 @@
 {
   "name": "bwdp_adminui",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "BWDP Admin Desktop Application",
   "author": "Badri Narayan Thamba",
   "type": "module",

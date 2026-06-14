@@ -77,7 +77,7 @@ const Login = () => {
 
         {/* Logo */}
         <div className="text-center mb-6">
-          <img src={admin_logo} alt="logo" className="mx-auto mb-3" style={{ width: "180px" }} />
+          <img src={admin_logo} alt="logo" className="mx-auto mb-3" style={{ width: "250px" }} />
           <h1 className="text-2xl font-semibold text-gray-800">Welcome Back</h1>
           <p className="text-gray-500 text-sm">Sign in to your admin account</p>
         </div>
@@ -141,7 +141,7 @@ const Login = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-blue-600 text-white py-2 rounded font-medium hover:bg-blue-700 transition disabled:bg-blue-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-[#FA7C14] text-white py-2 rounded font-medium hover:bg-[#FA7C14] transition disabled:bg-[#FA7C14] disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isLoading ? (
               <>
