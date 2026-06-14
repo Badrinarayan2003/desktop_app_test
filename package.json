@@ -1,7 +1,7 @@
 {
   "name": "bwdp_adminui",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "BWDP Admin Desktop Application",
   "author": "Badri Narayan Thamba",
   "type": "module",
@@ -67,6 +67,7 @@
       }
     ],
     "mac": {
+      "icon": "build/icon.icns",
       "target": [
         "dmg",
         "zip"
@@ -74,9 +75,11 @@
       "artifactName": "${productName}-${version}.${ext}"
     },
     "win": {
+      "icon": "build/icon.ico",
       "target": "nsis"
     },
     "linux": {
+      "icon": "build/icon.png",
       "target": "AppImage"
     }
   }
