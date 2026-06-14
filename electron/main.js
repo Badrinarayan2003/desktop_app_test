@@ -39,8 +39,16 @@ function setupAutoUpdater() {
         console.log("Checking for updates...");
     });
 
+    // autoUpdater.on("update-available", () => {
+    //     console.log("Update available");
+    // });
+
     autoUpdater.on("update-available", () => {
-        console.log("Update available");
+        dialog.showMessageBox({
+            type: "info",
+            title: "Update Available",
+            message: "A new version is downloading."
+        });
     });
 
     autoUpdater.on("update-not-available", () => {
@@ -53,14 +61,27 @@ function setupAutoUpdater() {
         );
     });
 
+    // autoUpdater.on("update-downloaded", () => {
+    //     dialog.showMessageBox({
+    //         type: "info",
+    //         title: "Update Ready",
+    //         message:
+    //             "A new version has been downloaded. Restart now?"
+    //     }).then(() => {
+    //         autoUpdater.quitAndInstall();
+    //     });
+    // });
+
     autoUpdater.on("update-downloaded", () => {
         dialog.showMessageBox({
             type: "info",
             title: "Update Ready",
-            message:
-                "A new version has been downloaded. Restart now?"
-        }).then(() => {
-            autoUpdater.quitAndInstall();
+            message: "A new version has been downloaded. Restart now?",
+            buttons: ["Restart Now", "Later"]
+        }).then((result) => {
+            if (result.response === 0) {
+                autoUpdater.quitAndInstall();
+            }
         });
     });
 

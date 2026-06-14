@@ -2,6 +2,8 @@
   "name": "bwdp_adminui",
   "private": true,
   "version": "1.0.0",
+  "description": "BWDP Admin Desktop Application",
+  "author": "Badri Narayan Thamba",
   "type": "module",
   "main": "electron/main.js",
   "scripts": {
@@ -65,7 +67,10 @@
       }
     ],
     "mac": {
-      "target": "dmg",
+      "target": [
+        "dmg",
+        "zip"
+      ],
       "artifactName": "${productName}-${version}.${ext}"
     },
     "win": {

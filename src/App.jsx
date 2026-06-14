@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, HashRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 
@@ -30,7 +30,7 @@ function App() {
   console.log(refreshToken, "refreshToken");
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         {/* ----------------- PUBLIC ROUTES ------------------ */}
         <Route element={<PublicRoutes />}>
@@ -68,7 +68,7 @@ function App() {
 
         <Route path="*" element={<Navigate to={accessToken ? "/home" : "/login"} replace />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
